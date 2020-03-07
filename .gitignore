@@ -1,0 +1,14 @@
+**/__pycache__/
+**/.ipynb_checkpoints/
+**/data/
+**/outputs/
+**/checkpoints/
+**/logs/
+**/run.sh
+ctags.sh
+tags
+jupyter/
+*~
+tmp/
+build/
+home/
