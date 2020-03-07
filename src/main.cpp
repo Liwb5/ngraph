@@ -37,10 +37,12 @@ PYBIND11_MODULE(ngraph, m) {
 
     py::class_<Graph>(m, "Graph")
         .def(py::init<IdArray, IdArray, uint64_t>())
-        .def("num_edges", &Graph::num_edges)
-        .def("num_nodes", &Graph::num_nodes)
+        .def("successor", &Graph::successor)
+        .def("predecessor", &Graph::predecessor)
         .def("indegree", &Graph::indegree)
-        .def("outdegree", &Graph::outdegree);
+        .def("outdegree", &Graph::outdegree)
+        .def("num_edges", &Graph::num_edges)
+        .def("num_nodes", &Graph::num_nodes);
 
 #ifdef VERSION_INFO
     m.attr("__version__") = VERSION_INFO;
