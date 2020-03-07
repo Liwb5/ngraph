@@ -4,7 +4,7 @@ Graph::Graph(IdArray src_ids, IdArray dst_ids, size_t num_nodes) {
 
     //TODO: assert src_ids.size() == dst_ids.size()
     num_edges_ = src_ids.size();
-    num_nodes_ = num_nodes_;
+    num_nodes_ = num_nodes;
 
     vector<uint64_t> indegree(num_nodes, 0);
     vector<uint64_t> outdegree(num_nodes, 0);
