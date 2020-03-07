@@ -36,7 +36,8 @@ PYBIND11_MODULE(ngraph, m) {
     )pbdoc";
 
     py::class_<Graph>(m, "Graph")
-        .def(py::init<IdArray, IdArray, uint64_t>())
+        .def(py::init())
+        .def(py::init<IdArray, IdArray, uint64_t>()) // 重载构造函数
         .def("successor", &Graph::successor)
         .def("predecessor", &Graph::predecessor)
         .def("indegree", &Graph::indegree)
