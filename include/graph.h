@@ -15,6 +15,8 @@ class Graph {
 
         uint64_t num_edges();
         uint64_t num_nodes();
+        vector<uint64_t> indegree(IdArray nodes);
+        vector<uint64_t> outdegree(IdArray nodes);
 
         // struct EdgeList {
         //     vector<vertex_t> succ;
