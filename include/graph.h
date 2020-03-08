@@ -1,11 +1,15 @@
+#ifndef __GRAPH_H
+#define __GRAPH_H
+
 #include <iostream>
 #include <vector>
 #include <stdint.h>
+#include "nametype.h"
 
 using namespace std;
-typedef uint64_t vertex_t;
-typedef vector<vertex_t> IdArray;
-typedef vector<vector<vertex_t>> d2Array;
+// typedef uint64_t vertex_t;
+// typedef vector<vertex_t> IdArray;
+// typedef vector<vector<vertex_t>> d2Array;
 
 class Graph {
     public:
@@ -14,12 +18,12 @@ class Graph {
 
         ~Graph() {};
 
-        uint64_t num_edges();
-        uint64_t num_nodes();
-        vector<uint64_t> indegree(IdArray nodes);
-        vector<uint64_t> outdegree(IdArray nodes);
-        d2Array successor(IdArray nodes);
-        d2Array predecessor(IdArray nodes);
+        uint64_t num_edges() const;
+        uint64_t num_nodes() const;
+        vector<uint64_t> indegree(IdArray nodes) const;
+        vector<uint64_t> outdegree(IdArray nodes) const;
+        d2Array successor(IdArray nodes) const;
+        d2Array predecessor(IdArray nodes) const;
 
 
         // struct EdgeList {
@@ -39,3 +43,5 @@ class Graph {
         d2Array pred_eids_;
 
 };
+
+#endif /*__GRAPH_H*/

@@ -47,7 +47,7 @@ Graph::Graph(IdArray src_ids, IdArray dst_ids, size_t num_nodes) {
 
 }
 
-d2Array Graph::successor(IdArray nodes) {
+d2Array Graph::successor(IdArray nodes) const {
     d2Array result;
     for (vertex_t id=0; id < nodes.size(); id++) {
         result.push_back(successors_[nodes[id]]);
@@ -55,7 +55,7 @@ d2Array Graph::successor(IdArray nodes) {
     return result;
 }
 
-d2Array Graph::predecessor(IdArray nodes) {
+d2Array Graph::predecessor(IdArray nodes) const {
     d2Array result;
     for (vertex_t id=0; id < nodes.size(); id++) {
         result.push_back(predecessors_[nodes[id]]);
@@ -63,7 +63,7 @@ d2Array Graph::predecessor(IdArray nodes) {
     return result;
 }
 
-vector<uint64_t> Graph::indegree(IdArray nodes) {
+vector<uint64_t> Graph::indegree(IdArray nodes) const {
     vector<uint64_t> result;
     for (vertex_t id=0; id < nodes.size(); id++) {
         result.push_back(indegree_[nodes[id]]);
@@ -72,7 +72,7 @@ vector<uint64_t> Graph::indegree(IdArray nodes) {
     return result;
 }
 
-vector<uint64_t> Graph::outdegree(IdArray nodes) {
+vector<uint64_t> Graph::outdegree(IdArray nodes) const {
     vector<uint64_t> result;
     for (vertex_t id=0; id < nodes.size(); id++) {
         result.push_back(outdegree_[nodes[id]]);
@@ -81,11 +81,11 @@ vector<uint64_t> Graph::outdegree(IdArray nodes) {
     return result;
 }
 
-uint64_t Graph::num_edges() {
+uint64_t Graph::num_edges() const {
     return num_edges_;
 }
 
-uint64_t Graph::num_nodes() {
+uint64_t Graph::num_nodes() const {
     return num_nodes_;
 }
 
