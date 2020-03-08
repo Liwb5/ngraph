@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include "class.h"
 #include "graph.h"
+#include "sample.h"
 
 
 using namespace std;
@@ -44,6 +45,10 @@ PYBIND11_MODULE(ngraph, m) {
         .def("outdegree", &Graph::outdegree)
         .def("num_edges", &Graph::num_edges)
         .def("num_nodes", &Graph::num_nodes);
+
+    m.def("base_random_walk", &base_random_walk, R"pbdoc(
+            Base random walk of single start node.
+    )pbdoc");
 
 #ifdef VERSION_INFO
     m.attr("__version__") = VERSION_INFO;

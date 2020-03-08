@@ -26,6 +26,7 @@ ext_modules = [
         'ngraph',
         ['src/main.cpp',
          'src/graph.cpp',
+         'src/sample.cpp',
          'src/class.cpp'],
         include_dirs=[
             # Path to pybind11 headers
