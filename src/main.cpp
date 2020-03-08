@@ -46,9 +46,7 @@ PYBIND11_MODULE(ngraph, m) {
         .def("num_edges", &Graph::num_edges)
         .def("num_nodes", &Graph::num_nodes);
 
-    m.def("base_random_walk", &base_random_walk, R"pbdoc(
-            Base random walk of single start node.
-    )pbdoc");
+    m.def("random_walk", &random_walk, py::arg("graph"), py::arg("nodes"), py::arg("depth"));
 
 #ifdef VERSION_INFO
     m.attr("__version__") = VERSION_INFO;
